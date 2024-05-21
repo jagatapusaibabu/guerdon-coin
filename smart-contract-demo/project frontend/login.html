@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Management DApp - Login</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        /* Reset some default styles */
+body, h1, h2, ul, li, form {
+    margin: 0;
+    padding: 0;
+}
+
+/* Style the body with a background color */
+body {
+    background-color: darksalmon;
+    font-family: Arial, sans-serif;
+}
+
+/* Style the header */
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Style the navigation menu */
+nav ul {
+    background-color: #333;
+    list-style-type: none;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Style the main content */
+main {
+    margin: 20px;
+    text-align: center;
+}
+
+/* Style the form container */
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style form labels and inputs */
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Style the login button */
+button[type="button"] {
+    background-color: #d08b8b;
+    color: white;
+    padding: 10px 20px;
+    border: 2px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[type="button"]:hover {
+    background-color: #555;
+}
+
+/* Center the form contents */
+center {
+    text-align: center;
+}
+/* Style the navigation buttons */
+.nav-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #e69e9e;
+    color: white;
+    text-decoration: none;
+    border: 2px;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.nav-button:hover {
+    background-color: #555;
+}
+
+/* Center the buttons within the navigation bar */
+.button-list {
+    text-align: center;
+}
+
+    </style>
+</head>
+<body style="background-color: darksalmon">
+    <header>
+        <h1>Login</h1>
+    </header>
+    <nav>
+        <ul class="button-list">
+            <li><a href="index.html" class="nav-button">Home</a></li>
+            <li><a href="registration.html" class="nav-button">Registration</a></li>
+            <li><a href="login.html" class="nav-button">Login</a></li>
+            <li><a href="business.html" class="nav-button">Business Account</a></li>
+            <li><a href="messaging.html" class="nav-button">Messaging</a></li>
+        </ul>
+    </nav>
+    <main>
+        <center>
+            <form id="loginForm">
+                <label for="loginUsername">Username:</label>
+                <input type="text" id="loginUsername" name="loginUsername"><br><br>
+
+                <label for="loginPassword">Password:</label>
+                <input type="password" id="loginPassword" name="loginPassword"><br><br>
+
+                <label for="loginAccountType">Account Type:</label>
+                <select id="loginAccountType" name="loginAccountType">
+                    <option value="business">Business Account</option>
+                    <option value="general">General Account</option>
+                </select><br><br>
+
+                <button type="button" onclick="validateAndSubmit()">Login</button>
+            </form>
+            <!-- Add a link to the registration page -->
+            <p>Don't have an account? <a href="registration.html">Create New Account</a></p>
+        </center>
+    </main>
+
+    <script>
+        function validateAndSubmit() {
+            var username = document.getElementById("loginUsername").value;
+            var password = document.getElementById("loginPassword").value;
+            var accountType = document.getElementById("loginAccountType").value;
+
+            if (username && password && accountType) {
+                // All fields are entered, so submit the form
+                document.getElementById("loginForm").submit();
+            } else {
+                // Display an alert or error message if any field is missing
+                alert("Please fill in all fields.");
+            }
+        }
+    </script>
+</body>
+</html>
